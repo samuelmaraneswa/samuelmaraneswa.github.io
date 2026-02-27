@@ -1,239 +1,364 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Portfolio | Samuel M L Tobing</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    <!-- AOS Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <!-- my css -->
-    <link rel="stylesheet" href="style.css" />
-    <!-- bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  </head>
-  <body id="home">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">Samuel M L Tobing</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active smooth-scroll" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link smooth-scroll" href="#contact">Contact</a>
-            </li>
-          </ul>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Samuel M LT | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+body{
+  font-family:'Inter',sans-serif;
+  background:#0f172a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.gradient-bg{
+  position:fixed;
+  width:800px;
+  height:800px;
+  background:radial-gradient(circle,#6366f1,#0f172a 70%);
+  filter:blur(120px);
+  animation:float 15s infinite alternate ease-in-out;
+  z-index:-1;
+}
+.gradient-bg.two{
+  right:-200px;
+  bottom:-200px;
+  background:radial-gradient(circle,#06b6d4,#0f172a 70%);
+  animation-delay:5s;
+}
+
+@keyframes float{
+  from{transform:translateY(-50px) translateX(-50px);}
+  to{transform:translateY(50px) translateX(50px);}
+}
+
+/* SCROLL ANIMATION */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:all .9s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#334155;
+  cursor:pointer;
+  transition:.3s;
+}
+.dot.active{
+  background:white;
+  transform:scale(1.3);
+}
+
+/* ========================= */
+/* 📱 MOBILE REFINEMENT */
+/* ========================= */
+@media (max-width: 640px){
+
+  .max-w-6xl{
+    padding-left:20px !important;
+    padding-right:20px !important;
+  }
+
+  h1{
+    font-size:40px !important;
+    line-height:1.1 !important;
+  }
+
+  h2{
+    font-size:32px !important;
+  }
+
+  h3{
+    font-size:22px !important;
+  }
+
+  img[id^="carousel-"]{
+    height:250px !important;
+  }
+
+  .gradient-bg{
+    width:500px;
+    height:500px;
+  }
+}
+
+/* ========================= */
+/* 📲 IPAD REFINEMENT */
+/* ========================= */
+@media (min-width:641px) and (max-width:1024px){
+
+  h1{
+    font-size:56px !important;
+  }
+
+  img[id^="carousel-"]{
+    height:350px !important;
+  }
+
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="gradient-bg"></div>
+<div class="gradient-bg two"></div>
+
+<div class="max-w-6xl mx-auto px-6 sm:py-5">
+
+  <!-- HERO -->
+  <section class="mt-12">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <div class="space-y-8 text-center md:text-left">
+
+        <h1 class="text-6xl md:text-7xl font-black tracking-tight bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          Samuel M LT
+        </h1>
+
+        <p class="text-lg text-gray-400 tracking-wide">
+          Laravel Developer · MVC · Ajax · Tailwind · Bootstrap 
+        </p>
+
+        <div class="space-y-4">
+
+          <p class="uppercase text-sm tracking-widest text-gray-500">
+            Founder of:
+          </p>
+
+          <a href="https://maskworkout.site" target="_blank"
+            class="inline-flex items-center gap-3 px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 transition shadow-lg border border-slate-700">
+            <span class="text-lg font-semibold text-white">
+              maskworkout.site
+            </span>
+            <span class="text-sm text-cyan-400">
+              ↗
+            </span>
+          </a>
+
+          <p class="text-gray-400 max-w-xl leading-relaxed">
+            A digital fitness platform focused on gym & healthy lifestyle. 
+            Helping users generate personalized 30-day workout programs 
+            based on their goals, level, and training environment.
+          </p>
+
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+
+          <a href="https://github.com/samuelmaraneswa"
+            target="_blank"
+            class="px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition text-center">
+            View GitHub
+          </a>
+
+          <a href="#projects"
+            class="px-6 py-3 border border-white rounded-2xl hover:bg-white hover:text-black transition text-center">
+            See Projects
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="flex justify-center md:justify-end sm:mt-8 md:mt-0">
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-cyan-400 blur-3xl opacity-20 rounded-full"></div>
+          <img src="me.jpg"
+            class="relative w-56 h-56 md:w-72 md:h-72 rounded-full object-cover shadow-2xl border-4 border-slate-800">
         </div>
       </div>
-    </nav>
-    <!-- end navbar -->
-    <!-- jumbotron -->
-    <div class="jumbotron jumbotron-fluid text-center">
-      <img src="img/me.jpg" alt="Samuel M L Tobing" class="rounded-circle img-thumbnail" width="150px" />
-      <h1 class="display-6">Samuel M L Tobing</h1>
-      <p class="lead"></p>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 70 1440 160">
-        <path
-          fill="#fff"
-          fill-opacity="1"
-          d="M0,160L48,170.7C96,181,192,203,288,202.7C384,203,480,181,576,165.3C672,149,768,139,864,154.7C960,171,1056,213,1152,218.7C1248,224,1344,192,1392,176L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
+
     </div>
-    <!-- akhir jumbotron -->
-    <!-- about -->
-    <section id="about">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h4>About Me</h4>
-          </div>
-        </div>
-        <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-4" data-aos="fade-right">
-            <p>Saya adalah seorang full stack website developer dengan bahasa pemprograman web yang sering saya pergunakan adalah HTML, CSS, Javascript, framework CSS Bootstrap dan bahasa pemprograman server PHP.</p>
-          </div>
-          <div class="col-md-4" data-aos="fade-left">
-            <p>Saya tamatan D3 Manajeman Informatika dari AMIK MEDICOM. Saya tergolong dengan web developer basic/ pemula dan saya belum mempunyai pengalaman kerja di bidang IT Web Programming.</p>
-          </div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#e2edff"
-          fill-opacity="1"
-          d="M0,128L48,144C96,160,192,192,288,176C384,160,480,96,576,90.7C672,85,768,139,864,144C960,149,1056,107,1152,106.7C1248,107,1344,149,1392,170.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- akhir about -->
-    <!-- projects -->
-    <section id="projects">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>My Mini Projects</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-duration="500">
-            <div class="card">
-              <a target="_blank" href="http://gymgeneration.infinityfreeapp.com/"
-                ><img src="img/projects/gym_generation.png" class="card-img-top" alt="Project 1" />
-                <div class="card-body">
-                  <p class="card-text">Procedural Ecommerce Website dengan menggunakan HTML, Bootstrap CSS, Javascript, PHP dengan menggunakan Database MYSQL.</p>
-                </div></a
-              >
-            </div>
-          </div>
-          <div class="col-md-4 mb-3" data-aos="flip-left" data-aos-duration="500" data-aos-delay="200">
-            <div class="card">
-              <a target="_blank" href="https://drive.google.com/file/d/15KEQ4Q_eQTbywrZYQOZlnheOSuUUaGeM/view?usp=drive_link"
-                ><img src="img/projects/lead_tracker.png" class="card-img-top" alt="Project 3" />
-                <div class="card-body">
-                  <p class="card-text">Google chorme ekstensi yang dibuat dengan Javascript yang bertujuan menyimpan url dari tab google search dan untuk menyimpan url yang di inputkan secara manual.</p>
-                </div></a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path
-          fill="#ffffff"
-          fill-opacity="1"
-          d="M0,192L48,197.3C96,203,192,213,288,202.7C384,192,480,160,576,149.3C672,139,768,149,864,176C960,203,1056,245,1152,245.3C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- akhir projects -->
-    <!-- Contact -->
-    <section id="contact">
-      <div class="container">
-        <div class="row text-center mb-3">
-          <div class="col">
-            <h2>Contact Me</h2>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-6">
-            <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
-              <strong>Terima kasih!</strong> Pesan Anda sudah saya terima.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            <form name="my-portfolio-contact-form">
-              <div class="mb-3">
-                <label for="name" class="form-label">From:</label>
-                <input type="text" class="form-control" id="name" aria-describedby="name" name="nama" />
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" aria-describedby="email" name="email" />
-              </div>
-              <div class="mb-3">
-                <label for="pesan" class="form-label">Pesan</label>
-                <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary btn-kirim">Kirim</button>
-              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Loading...
-              </button>
-            </form>
-          </div>
-        </div>
+  </section>
+
+
+
+  <!-- PROJECTS -->
+  <section id="projects" class="mt-12 sm:mt-24 sm:space-y-20">
+
+    <p class="text-3xl sm:text-5xl font-bold text-center reveal">
+      Selected Projects
+    </p>
+
+
+    <!-- FACEBOOK STATIC -->
+    <div class="reveal space-y-4 mt-8">
+      <h3 class="text-3xl font-bold">Facebook Clone (Static)</h3>
+      <p class="text-gray-400 max-w-3xl">
+      Clone tampilan Facebook berbasis HTML, CSS, dan JavaScript statis.
+      Fokus pada UI layout dan struktur file yang proper.
+      </p>
+      <a href="https://facebook-clone-statis.vercel.app/"
+        target="_blank"
+        class="inline-block px-4 py-2 sm:px-6 sm:py-2 bg-white text-black rounded-xl hover:scale-105 transition">
+        Live Demo →
+      </a>
+    </div>  
+
+
+
+    <!-- ANSVIN SCHOOL -->
+    <div class="reveal sm:space-y-4 mt-12">
+      <h3 class="text-3xl font-bold">Ansvin School (Multi School Website)</h3>
+      <p class="text-gray-400 max-w-3xl">
+      Website Yayasan Sekolah yang saling terhubung antara 4 web sekolah dalam 1 lokasi. Berbasis MVC
+      </p>
+
+      <div class="flex gap-4 flex-wrap mt-6 sm:mt-0">
+        <a href="https://youtu.be/Mo7XHdvHm2Y"
+          target="_blank"
+          class="px-4 py-2 sm:px-6 sm:py-2 bg-white text-black rounded-xl hover:scale-105 transition">
+          YT Demo
+        </a>
+
+        <a href="https://github.com/samuelmaraneswa/ansvin_foundation"
+          target="_blank"
+          class="px-4 py-2 sm:px-6 sm:py-2 border border-white rounded-xl hover:bg-white hover:text-black transition">
+          GitHub
+        </a>
       </div>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250">
-        <path
-          fill="#0d6efd"
-          fill-opacity="1"
-          d="M0,192L48,181.3C96,171,192,149,288,160C384,171,480,213,576,208C672,203,768,149,864,133.3C960,117,1056,139,1152,154.7C1248,171,1344,181,1392,186.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-        ></path>
-      </svg>
-    </section>
-    <!-- Akhir Contact -->
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center pb-4">
-      <p>Created with <i class="bi bi-heart-fill text-danger"></i> by <a href="https://www.instagram.com/samuelmaraneswa/" class="text-white fw-bold" target="_blank">Samuel M L Tobing</a></p>
-    </footer>
-    <!-- Akhir Footer -->
+      <div class="relative mt-6 sm:!mt-8">
+        <div class="overflow-hidden rounded-3xl shadow-2xl">
+          <img id="carousel-multi"
+            src="assets/multi-school-web/ansvin-school-home.png"
+            class="w-full h-[450px] object-cover transition duration-700">
+        </div>
+        <div class="flex justify-center gap-3 mt-6" id="dots-multi"></div>
+      </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      const galleryImg = document.querySelectorAll(".gallery-img");
 
-      galleryImg.forEach((img, i) => {
-        img.dataset.aos = "fade-down";
-        img.dataset.aosDelay = i * 100;
-        img.dataset.aosDuration = 1000;
-      });
+    <!-- MYBOOK -->
+    <div class="reveal sm:space-y-8 mt-10 sm:mt-0">
+      <h3 class="text-3xl font-bold">MyBook (Full Stack Facebook Clone)</h3>
+      <p class="text-gray-400 max-w-3xl">
+      Website Media Sosial Facebook clone dengan sturktu MVC dan bootstrap. Sudah include ajax.
+      </p>
 
-      AOS.init({
-        once: true,
-        duration: 2000,
-      });
-    </script>
+      <div class="flex gap-4 flex-wrap sm:mt-0 mt-6">
+        <a href="https://youtu.be/3EmdhLRbQ_0"
+          target="_blank"
+          class="px-4 py-2 sm:px-6 sm:py-2 bg-white text-black rounded-xl hover:scale-105 transition">
+          YT Demo
+        </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.1/dist/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/TextPlugin.min.js"></script>
+        <a href="https://github.com/samuelmaraneswa/facebook-clone"
+          target="_blank"
+          class="px-4 py-2 sm:px-6 sm:py-2 border border-white rounded-xl hover:bg-white hover:text-black transition">
+          GitHub
+        </a>
+      </div>
 
-    <script>
-      gsap.registerPlugin(TextPlugin);
-      gsap.to(".lead", { duration: 2, delay: 1.5, text: "Full Stack Website Developer" });
-      gsap.from(".jumbotron img", { duration: 1, rotateY: 360, opacity: 0 });
-      gsap.from(".navbar", { duration: 1.5, y: "-100%", opacity: 0, ease: "bounce" });
-      gsap.from(".display-6", { duration: 1, x: -50, opacity: 0, delay: 0.5, ease: "back" });
-    </script>
+      <div class="relative sm:mt-0 mt-6">
+        <div class="overflow-hidden rounded-3xl shadow-2xl">
+          <img id="carousel-mybook"
+            src="assets/mybook/mybook-home.png"
+            class="w-full h-[450px] object-cover transition duration-700">
+        </div>
+        <div class="flex justify-center gap-3 mt-6" id="dots-mybook"></div>
+      </div>
+    </div>
 
-    <script>
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyPbz0aFwzezFgrMYzvztE_PNQa7fpkAz8HNw_V9dacwoAxd05txL9XE2zMkRcMDGCsmw/exec";
-      const form = document.forms["my-portfolio-contact-form"];
-      const btnKirim = document.querySelector(".btn-kirim");
-      const btnLoading = document.querySelector(".btn-loading");
-      const myAlert = document.querySelector(".my-alert");
+  </section>
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // ketika tombol submit di klik
-        // tampilkan tombol loading, hilangkan tombol kirim
-        btnLoading.classList.toggle("d-none");
-        btnKirim.classList.toggle("d-none");
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // tampilkan tombol kirim, hilangkan tombol loading
-            btnLoading.classList.toggle("d-none");
-            btnKirim.classList.toggle("d-none");
-            // tampilkan alert
-            myAlert.classList.toggle("d-none");
-            // reset form
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
-    <script type="text/javascript" src="js/vanilla-tilt.min.js"></script>
-    <script type="text/javascript">
-      VanillaTilt.init(document.querySelectorAll(".keyboard-box"), {
-        max: 25,
-        speed: 400,
-        glare: true,
-      });
-    </script>
-  </body>
+
+
+  <!-- CONTACT -->
+  <section class="reveal text-center border-t border-slate-700 pt-5 sm:pt-10 mt-5 sm:mt-10 mb-10">
+    <p class="text-xl sm:text-4xl font-bold mb-4 sm:mb-6">Let’s Build Something Great</p>
+    <p class="text-gray-400 mb-4">Available for full-time roles</p>
+    <p class="text-lg font-semibold">0821-6995-6714</p>
+  </section>
+
+</div>
+
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+
+function revealOnScroll(){
+  reveals.forEach(r=>{
+    if(r.getBoundingClientRect().top < window.innerHeight - 100){
+      r.classList.add('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('DOMContentLoaded', revealOnScroll);
+
+function initCarousel(name,data){
+  const img=document.getElementById(data.element);
+  const dots=document.getElementById('dots-'+name);
+
+  data.images.forEach((_,i)=>{
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>{data.index=i;update();}
+    dots.appendChild(d);
+  });
+
+  function update(){
+    img.src=data.images[data.index];
+    dots.querySelectorAll('.dot').forEach((d,i)=>{
+      d.classList.toggle('active',i===data.index);
+    });
+  }
+
+  setInterval(()=>{
+    data.index=(data.index+1)%data.images.length;
+    update();
+  },3500);
+}
+
+initCarousel("multi",{
+  images:[
+    "assets/multi-school-web/ansvin-school-home.png",
+    "assets/multi-school-web/pendaftaran-page.png",
+    "assets/multi-school-web/login-section.png",
+    "assets/multi-school-web/admin-section.png",
+    "assets/multi-school-web/create-artikel-section.png",
+    "assets/multi-school-web/edit-artikel-section.png",
+    "assets/multi-school-web/crud-pegawai-section-ajax.png",
+    "assets/multi-school-web/billing-section-calon-siswa.png",
+    "assets/multi-school-web/struktur-file.png"
+  ],
+  index:0,
+  element:"carousel-multi"
+});
+
+initCarousel("mybook",{
+  images:[
+    "assets/mybook/mybook-home.png",
+    "assets/mybook/mybook-login-section.png",
+    "assets/mybook/mybook-signup-section.png",
+    "assets/mybook/mybook-profile-section.png",
+    "assets/mybook/mybook-followers-section.png",
+    "assets/mybook/mybook-message-section.png",
+    "assets/mybook/mybook-crud-posts-section.png",
+    "assets/mybook/struktur-file.png"
+  ],
+  index:0,
+  element:"carousel-mybook"
+});
+</script>
+
+</body>
 </html>
