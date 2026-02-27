@@ -85,10 +85,6 @@ body{
     font-size:22px !important;
   }
 
-  img[id^="carousel-"]{
-    height:250px !important;
-  }
-
   .gradient-bg{
     width:500px;
     height:500px;
@@ -124,18 +120,27 @@ body{
   <section class="mt-12">
     <div class="grid md:grid-cols-2 gap-16 items-center">
 
+      <!-- TEXT -->
       <div class="space-y-8 text-center md:text-left">
 
         <h1 class="text-6xl md:text-7xl font-black tracking-tight bg-gradient-to-r from-indigo-400 to-cyan-400 bg-clip-text text-transparent">
           Samuel M LT
         </h1>
 
+        <!-- FOTO KHUSUS MOBILE -->
+        <div class="flex justify-center md:hidden">
+          <div class="relative">
+            <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-cyan-400 blur-3xl opacity-20 rounded-full"></div>
+            <img src="me.jpg"
+              class="relative w-44 h-44 rounded-full object-cover shadow-2xl border-4 border-slate-800">
+          </div>
+        </div>
+
         <p class="text-lg text-gray-400 tracking-wide">
           Laravel Developer · MVC · Ajax · Tailwind · Bootstrap 
         </p>
 
         <div class="space-y-4">
-
           <p class="uppercase text-sm tracking-widest text-gray-500">
             Founder of:
           </p>
@@ -145,9 +150,7 @@ body{
             <span class="text-lg font-semibold text-white">
               maskworkout.site
             </span>
-            <span class="text-sm text-cyan-400">
-              ↗
-            </span>
+            <span class="text-sm text-cyan-400">↗</span>
           </a>
 
           <p class="text-gray-400 max-w-xl leading-relaxed">
@@ -155,11 +158,9 @@ body{
             Helping users generate personalized 30-day workout programs 
             based on their goals, level, and training environment.
           </p>
-
         </div>
 
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-
           <a href="https://github.com/samuelmaraneswa"
             target="_blank"
             class="px-6 py-3 bg-white text-black rounded-2xl font-semibold hover:scale-105 transition text-center">
@@ -170,12 +171,11 @@ body{
             class="px-6 py-3 border border-white rounded-2xl hover:bg-white hover:text-black transition text-center">
             See Projects
           </a>
-
         </div>
-
       </div>
 
-      <div class="flex justify-center md:justify-end sm:mt-8 md:mt-0">
+      <!-- FOTO DESKTOP / IPAD -->
+      <div class="hidden md:flex justify-center md:justify-end">
         <div class="relative">
           <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-cyan-400 blur-3xl opacity-20 rounded-full"></div>
           <img src="me.jpg"
@@ -186,13 +186,11 @@ body{
     </div>
   </section>
 
-
-
   <!-- PROJECTS -->
   <section id="projects" class="mt-12 sm:mt-24 sm:space-y-20">
 
     <p class="text-3xl sm:text-5xl font-bold text-center reveal">
-      Selected Projects
+      My Projects
     </p>
 
 
@@ -206,8 +204,9 @@ body{
       <a href="https://facebook-clone-statis.vercel.app/"
         target="_blank"
         class="inline-block px-4 py-2 sm:px-6 sm:py-2 bg-white text-black rounded-xl hover:scale-105 transition">
-        Live Demo →
+        Live Demo → 
       </a>
+      <p class="text-sm text-red-500 italic">*view untuk laptop, mobile belum mendukung*</p>
     </div>  
 
 
